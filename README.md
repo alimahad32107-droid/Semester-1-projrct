@@ -65,14 +65,3 @@ Linux / macOS:
 👨‍💻 Author
 
 Created as a Semester 1 C++ programming project.
-
-
-
-\## Git Practice
-
-This is my first practice branch: `practice-readme`
-
-
-
-I am learning how to use git braches, commits and pull requests.
-
