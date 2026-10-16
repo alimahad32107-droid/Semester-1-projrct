@@ -71,7 +71,7 @@ bool checkwin(char n)  {
 	return true;
 	}	
 }
-return false;
+    return false;
 }
 bool full() {
     for (int i=0;i<9;i++) {
@@ -103,25 +103,27 @@ void game() {
         cout << "\n=== TIC TAC TOE ===" << endl;
         board();
 		
-       if (checkwin(mark)) {
-          if (mark == 'X') {
+       if (checkwin(mark)) 
+	  {
+          if (mark == 'X'){
             p1Wins++;
-        } else {
+           } else {
            p2Wins++;
-         }
-    scoreboard(); 
-    cout << "\nDo You Want to Play Again (y/n): ";
-    cin >> ans;
-    return;
-     }
-        if (full()) {
+           }
+        scoreboard(); 
+        cout << "\nDo You Want to Play Again (y/n): ";
+        cin >> ans;
+        return;
+      }
+        if (full())
+		 {
             cout << "\nIt's a draw!" << endl;
             draws++;
 			scoreboard();
 			cout << "\nDo You Want to Play Again (y/n): ";
 			cin >> ans;
-    return;
-      }
+             return;
+         }
     i++;
 	}	  
 }
