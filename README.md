@@ -6,24 +6,24 @@ This game runs in the command line and allows two players to play against each o
 
 ✨ Features
 
-- 👥 Two-player gameplay
-- 🏆 Win detection
-- 🤝 Draw detection
-- ✅ Invalid move prevention
-- 🔄 Play again option
+* 👥 Two-player gameplay
+* 🏆 Win detection
+* 🤝 Draw detection
+* ✅ Invalid move prevention
+* 🔄 Play again option
 
 🛠️ Technologies Used
 
-- C++
-- Standard Input/Output
-- Loops and conditional statements
-- Basic game logic
+* C++
+* Standard Input/Output
+* Loops and conditional statements
+* Basic game logic
 
 🚀 How to Run
 
 Requirements
 
-- A C++ compiler, such as GCC or MinGW
+* A C++ compiler, such as GCC or MinGW
 
 Compile the Program
 
@@ -50,18 +50,29 @@ Linux / macOS:
 
 📚 What I Learned
 
-- C++ programming fundamentals
-- Conditional statements and loops
-- Input validation
-- Implementing game logic
-- Building a command-line application
+* C++ programming fundamentals
+* Conditional statements and loops
+* Input validation
+* Implementing game logic
+* Building a command-line application
 
 🔮 Future Improvements
 
-- Scoreboard to track player wins and draws
-- Single-player mode against the computer
-- Improved terminal interface
+* Scoreboard to track player wins and draws
+* Single-player mode against the computer
+* Improved terminal interface
 
 👨‍💻 Author
 
 Created as a Semester 1 C++ programming project.
+
+
+
+\## Git Practice
+
+This is my first practice branch: `practice-readme`
+
+
+
+I am learning how to use git braches, commits and pull requests.
+
