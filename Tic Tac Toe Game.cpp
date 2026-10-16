@@ -2,8 +2,11 @@
 using namespace std;
 char space[9] = {'1','2','3','4','5','6','7','8','9'};
 string p1, p2;
-int move,player = 1;
+int pos,player = 1;
 char mark,ans;
+int p1Wins = 0;
+int p2Wins = 0;
+int draws = 0;
 void board() {
     cout<<"\n"<<space[0]<<"  | "<<space[1]<<" | "<<space[2]<<endl;
     cout<<"___|___|___"<<endl;
@@ -12,13 +15,21 @@ void board() {
     cout<<space[6]<<"  | "<<space[7]<<" | "<<space[8]<<endl;
 }
 
+void scoreboard() {
+    cout << "\n===== SCOREBOARD =====" << endl;
+    cout << p1 << " (X) Wins: " << p1Wins << endl;
+    cout << p2 << " (O) Wins: " << p2Wins << endl;
+    cout << "Draws: " << draws << endl;
+    cout << "======================" << endl;
+}
+
 void person1() {
     if (player==1) {
         cout<<"\n"<<p1<<" (X) Enter your move (1-9): ";
-        cin>>move;
+        cin>>pos;
         mark='X';
-         if ((move>=1&&move<=9)&&(space[move-1]!='X'&&space[move-1]!='O')) {
-            space[move-1]=mark;
+         if ((pos>=1&&pos<=9)&&(space[pos-1]!='X'&&space[pos-1]!='O')) {
+            space[pos-1]=mark;
             player=2;
          }else{
             cout<<"Invalid move or space already taken. Try again."<<endl;
@@ -29,10 +40,10 @@ void person1() {
 void person2() {
     if (player==2) {
         cout<<"\n"<<p2<<" (O) Enter your move (1-9): ";
-        cin>>move;
+        cin>>pos;
        mark='O';
-        if ((move>=1&&move<=9)&&(space[move-1]!='X'&&space[move-1]!='O')) {
-            space[move-1]=mark;
+        if ((pos>=1&&pos<=9)&&(space[pos-1]!='X'&&space[pos-1]!='O')) {
+            space[pos-1]=mark;
             player=1;
         }else{
             cout<<"Invalid move or space already taken. Try again."<<endl;
@@ -91,17 +102,26 @@ void game() {
         system("cls");
         cout << "\n=== TIC TAC TOE ===" << endl;
         board();
-		if (checkwin(mark)) 
-		{cout<<"\nDo You Want to Play Again(y/n):";
-     	cin>>ans;
-     	return;
-		}
+		
+       if (checkwin(mark)) {
+          if (mark == 'X') {
+            p1Wins++;
+        } else {
+           p2Wins++;
+         }
+    scoreboard(); 
+    cout << "\nDo You Want to Play Again (y/n): ";
+    cin >> ans;
+    return;
+     }
         if (full()) {
-            cout<<"\n"<<"It's a draw!"<<endl;
-          cout<<"\nDo You Want to Play Again(y/n):";
-     	cin>>ans; 
-		 return; 
-        }
+            cout << "\nIt's a draw!" << endl;
+            draws++;
+			scoreboard();
+			cout << "\nDo You Want to Play Again (y/n): ";
+			cin >> ans;
+    return;
+      }
     i++;
 	}	  
 }
